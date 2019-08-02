@@ -1,0 +1,48 @@
+from selenium import webdriver
+from urllib.request import Request, urlopen
+from bs4 import BeautifulSoup as soup
+import time
+import re
+
+
+
+
+
+list_of_links2 = []
+
+
+
+
+link = 'https://www.marktplaats.nl//l/auto-s'
+
+req = Request(link, headers={'User-Agent': 'Mozilla/5.0'})
+
+webpage = urlopen(req).read()
+
+page_soup = soup(webpage, "html.parser")
+
+divs2 = 
+
+for div2 in div2s:
+	list_of_links2.append("https://www.marktplaats.nl/" + div.find('a')['href'])
+				
+
+print(list_of_links2)
+
+
+		
+
+url = 'https://www.marktplaats.nl//l/auto-s'
+
+req = Request(url , headers={'User-Agent': 'Mozilla/5.0'})
+
+webpage = urlopen(req).read()
+
+page_soup = soup(webpage, "html.parser")
+
+if page_soup.find("h3", {"class": "mp-Listing-title"}):
+	b = page_soup.find("div", {"class": "left"})
+
+	if b.find("span"):
+
+	list_of_numbers.append(.text)

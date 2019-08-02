@@ -1,0 +1,32 @@
+
+from selenium import webdriver
+from urllib.request import Request, urlopen
+from bs4 import BeautifulSoup as soup
+import time
+import re
+
+
+
+
+
+
+
+
+
+
+
+url = 'file:///C:/Users/Lorcan/Desktop/PYTHON%20TESTING/bot3-master/Advertiser.ie-Number-Scraping-Bot/bolo/Bolo-Website-master/index.html'
+
+req = Request(url , headers={'User-Agent': 'Mozilla/5.0'})
+
+webpage = urlopen(req).read()
+page_soup = soup(webpage, "html.parser")
+
+
+divs = page_soup.findAll("h1")
+
+print(divs)
+
+
+
+

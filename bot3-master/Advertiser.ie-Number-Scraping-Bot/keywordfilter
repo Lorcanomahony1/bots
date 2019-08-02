@@ -1,0 +1,14 @@
+mylist = ['kitchenPorter', 'general-labourer', 'architectural Designer']
+
+
+thelist=[]
+
+
+
+subslist = ['kitchen', 'cook', 'dishwasher']
+
+for sub in subslist:
+
+	thelist.append([s for s in mylist if sub in s])
+
+print(thelist)

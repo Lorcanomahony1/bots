@@ -1,0 +1,52 @@
+
+from selenium import webdriver
+from urllib.request import Request, urlopen
+from bs4 import BeautifulSoup as soup
+import time
+import re
+
+
+
+
+
+
+list_of_links = []
+
+
+url = 'https://www.marktplaats.nl/'
+
+req = Request(url , headers={'User-Agent': 'Mozilla/5.0'})
+
+webpage = urlopen(req).read()
+page_soup = soup(webpage, "html.parser")
+
+
+divs = page_soup.findAll("div", {"class": "mp-Header-skirt-content-link"})
+
+
+for div in divs:
+	    list_of_links.append("https://www.marktplaats.nl/" + div.find('a')['href'])
+
+
+list_of_links2 = []
+
+for link in list_of_links:
+		url = link
+
+		req = Request(url , headers={'User-Agent': 'Mozilla/5.0'})
+
+		webpage = urlopen(req).read()
+
+		page_soup = soup(webpage, "html.parser")
+
+		divs2 = page_soup.findAll("h3", {"class": "mp-Listing-title"})
+
+		for div2 in div2s:
+			list_of_links2.append("https://www.marktplaats.nl/" + div.find('a')['href'])
+		
+		
+
+for i in range(907):      # Number of pages plus one 
+    url = "http://www.pga.com/golf-courses/search?page={}&searchbox=Course+Name&searchbox_zip=ZIP&distance=50&price_range=0&course_type=both&has_events=0".format(i)
+    r = requests.get(url)
+    soup = BeautifulSoup(r.content)
