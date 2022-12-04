@@ -20,5 +20,5 @@ FROM_EMAIL = 'lorcanfrederickomahony@gmail.com'
 
 # test recipients list
 TEST_RECIPIENTS = [
-    {'name': 'lorcan', 'email': 'lorcy7901lorka@gmail.com'},
+    {'name': 'lorcan', 'email': '@gmail.com'},
 ]
